@@ -1,0 +1,17 @@
+/*
+  by Jarkko Saltiola (jasalt)
+ */
+
+#include <VirtualWire.h>
+
+void setup(){
+  vw_setup(2000); // bps
+}
+void loop(){
+  send("hello world world wolrd"); //your message
+  delay(1000);
+}
+void send (char *message){
+  vw_send((uint8_t *)message, strlen(message));
+  vw_wait_tx();
+}
