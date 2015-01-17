@@ -37,4 +37,6 @@ void loop(){
 void send (char *message){
   vw_send((uint8_t *)message, strlen(message));
   vw_wait_tx();
+  Serial.println("Sent: ");
+  //Serial.println(String(uint8_t *)message);
 }
